@@ -1,2 +1,39 @@
 
+<mat-sidenav-container fullscreen>
 
+    <mat-sidenav #sidenav="matSidenav" mode="push">
+        <mat-nav-list (click)="sidenav.close()">
+            <a mat-list-item routerLink="/">
+                <mat-icon>library_books</mat-icon>
+                <span>&nbsp;Courses</span>
+            </a>
+            <a mat-list-item routerLink="/about">
+                <mat-icon>question_answer</mat-icon>
+                <span>&nbsp;About</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>person_add</mat-icon>
+                <span>&nbsp;Register</span>
+            </a>
+            <a mat-list-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>&nbsp;Login</span>
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <!-- <mat-sidenav mode="over/push/side" opened>Sidenav content</mat-sidenav> -->
+    <mat-sidenav-content>
+        <!-- Toolbar -->
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+        </mat-toolbar>
+
+        <!-- Router Outlet -->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
