@@ -1,4 +1,3 @@
-
 <mat-sidenav-container fullscreen>
 
     <mat-sidenav #sidenav="matSidenav" mode="push">
@@ -29,7 +28,23 @@
             <button mat-icon-button (click)="sidenav.open()">
                 <mat-icon>menu</mat-icon>
             </button>
-
+            <!-- Screens Menu -->
+            <a mat-button [matMenuTriggerFor]="dropdown">
+                Screens<mat-icon>arrow_right</mat-icon>
+            </a>
+            <mat-menu #dropdown>
+                <button mat-menu-item routerLink="/">Courses</button>
+                <button mat-menu-item routerLink="/about">About</button>
+            </mat-menu>
+            <!-- Screens Menu Ends -->
+            <button mat-button>
+                <mat-icon>person_add</mat-icon>
+                Register
+            </button>
+            <button mat-button>
+                <mat-icon>account_circle</mat-icon>
+                Login
+            </button>
         </mat-toolbar>
 
         <!-- Router Outlet -->
